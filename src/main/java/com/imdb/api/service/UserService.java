@@ -1,7 +1,7 @@
-package com.imdb.api.service.jpa;
+package com.imdb.api.service;
 
 import com.imdb.api.model.entity.UserEntity;
-import com.imdb.api.repository.jpa.UserJpaRepository;
+import com.imdb.api.repository.UserJpaRepository;
 import com.imdb.api.security.domain.enumeration.AuthRole;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

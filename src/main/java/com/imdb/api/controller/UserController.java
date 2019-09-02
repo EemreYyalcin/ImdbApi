@@ -1,7 +1,7 @@
 package com.imdb.api.controller;
 
 import com.imdb.api.model.entity.UserEntity;
-import com.imdb.api.service.jpa.UserService;
+import com.imdb.api.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;

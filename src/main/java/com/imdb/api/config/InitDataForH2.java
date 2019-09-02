@@ -2,7 +2,7 @@ package com.imdb.api.config;
 
 import com.imdb.api.model.entity.UserEntity;
 import com.imdb.api.security.domain.enumeration.AuthRole;
-import com.imdb.api.service.jpa.UserService;
+import com.imdb.api.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

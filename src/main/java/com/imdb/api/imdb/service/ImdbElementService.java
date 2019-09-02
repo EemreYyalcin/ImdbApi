@@ -25,7 +25,7 @@ public class ImdbElementService {
         imdbElementJpaRepository.save(imdbElementEntity);
     }
 
-    public void saveAsync(ImdbElementEntity imdbElementEntity){
+    public void saveAsync(ImdbElementEntity imdbElementEntity) {
         new Thread(new Runnable() {
             @Override
             public void run() {

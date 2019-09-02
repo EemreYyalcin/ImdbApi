@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ImdbIdResponse extends ImdbBaseResponse{
+public class ImdbIdResponse extends ImdbBaseResponse {
 
     @JsonProperty("Metascore")
     private String metascore;

@@ -6,11 +6,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RatingsItem{
+public class RatingsItem {
 
-	@JsonProperty("Value")
-	private String value;
+    @JsonProperty("Value")
+    private String value;
 
-	@JsonProperty("Source")
-	private String source;
+    @JsonProperty("Source")
+    private String source;
 }

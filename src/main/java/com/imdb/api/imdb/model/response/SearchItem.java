@@ -6,20 +6,20 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class SearchItem{
+public class SearchItem {
 
-	@JsonProperty("Type")
-	private String type;
+    @JsonProperty("Type")
+    private String type;
 
-	@JsonProperty("Year")
-	private String year;
+    @JsonProperty("Year")
+    private String year;
 
-	@JsonProperty("imdbID")
-	private String imdbID;
+    @JsonProperty("imdbID")
+    private String imdbID;
 
-	@JsonProperty("Poster")
-	private String poster;
+    @JsonProperty("Poster")
+    private String poster;
 
-	@JsonProperty("Title")
-	private String title;
+    @JsonProperty("Title")
+    private String title;
 }

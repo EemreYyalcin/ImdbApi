@@ -44,6 +44,5 @@ public class InitDataForH2 implements CommandLineRunner {
                 .setRoles(Arrays.asList(AuthRole.ROLE_GUEST)));
 
 
-
     }
 }

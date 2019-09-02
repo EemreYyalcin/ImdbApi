@@ -6,7 +6,6 @@ import com.imdb.api.imdb.model.response.ImdbIdResponse;
 import com.imdb.api.imdb.model.response.ImdbSearchResponse;
 import com.imdb.api.imdb.service.ImdbClientService;
 import lombok.RequiredArgsConstructor;
-import org.mapstruct.Mapper;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

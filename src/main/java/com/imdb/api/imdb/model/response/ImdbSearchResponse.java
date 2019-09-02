@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ImdbSearchResponse extends ImdbBaseResponse{
+public class ImdbSearchResponse extends ImdbBaseResponse {
 
     @JsonProperty("totalResults")
     private String totalResults;

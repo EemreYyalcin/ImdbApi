@@ -25,12 +25,10 @@ public abstract class BaseEntity implements Serializable, Cloneable {
 
     private static final long serialVersionUID = 2658120334042475828L;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column
     @CreatedDate
     private LocalDateTime createdAt;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column
     @LastModifiedDate
     private LocalDateTime updatedAt;

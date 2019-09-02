@@ -19,5 +19,4 @@ public class ImdbClientService {
     public <T extends ImdbBaseResponse> T fetchData(String query, Class<T> clazz) {
         return new RestTemplate().getForObject(url + apikey + query, clazz);
     }
-
 }

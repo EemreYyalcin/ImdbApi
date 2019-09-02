@@ -1,6 +1,6 @@
 package com.imdb.api.security.service;
 
-import com.imdb.api.model.entity.User;
+import com.imdb.api.model.entity.UserEntity;
 import com.imdb.api.service.jpa.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,10 +15,10 @@ public class UserServiceImpl implements UserDetailsService {
     private final UserService userService;
 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userService.findUserByUsername(username)
+        UserEntity userEntity = userService.findUserByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Invalid username or password."));
 
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), userService.getRoles(user));
+        return new org.springframework.security.core.userdetails.User(userEntity.getUsername(), userEntity.getPassword(), userService.getRoles(userEntity));
     }
 
 }

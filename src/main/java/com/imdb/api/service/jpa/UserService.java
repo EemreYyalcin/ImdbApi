@@ -1,6 +1,6 @@
 package com.imdb.api.service.jpa;
 
-import com.imdb.api.model.entity.User;
+import com.imdb.api.model.entity.UserEntity;
 import com.imdb.api.repository.jpa.UserJpaRepository;
 import com.imdb.api.security.domain.enumeration.AuthRole;
 import lombok.RequiredArgsConstructor;
@@ -18,30 +18,30 @@ public class UserService {
 
     private final UserJpaRepository userJpaRepository;
 
-    public Optional<User> findUserByUsername(String username) {
+    public Optional<UserEntity> findUserByUsername(String username) {
         return userJpaRepository.findByUsername(username);
     }
 
-    public List<SimpleGrantedAuthority> getRoles(User user) {
-        if (user == null || user.getRoles() == null) {
+    public List<SimpleGrantedAuthority> getRoles(UserEntity userEntity) {
+        if (userEntity == null || userEntity.getRoles() == null) {
             return new ArrayList<SimpleGrantedAuthority>() {{
                 add(new SimpleGrantedAuthority(AuthRole.ROLE_GUEST.name()));
             }};
         }
-        return user.getRoles().stream()
+        return userEntity.getRoles().stream()
                 .map(AuthRole::name)
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
 
-    public List<User> getAllUser() {
-        List<User> users = new ArrayList<>();
-        userJpaRepository.findAll().iterator().forEachRemaining(users::add);
-        return users;
+    public List<UserEntity> getAllUser() {
+        List<UserEntity> userEntities = new ArrayList<>();
+        userJpaRepository.findAll().iterator().forEachRemaining(userEntities::add);
+        return userEntities;
     }
 
-    public User addUser(User user) {
-        return userJpaRepository.save(user);
+    public UserEntity addUser(UserEntity userEntity) {
+        return userJpaRepository.save(userEntity);
     }
 
 }

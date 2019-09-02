@@ -1,6 +1,6 @@
 package com.imdb.api.controller;
 
-import com.imdb.api.model.entity.User;
+import com.imdb.api.model.entity.UserEntity;
 import com.imdb.api.service.jpa.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
@@ -19,7 +19,7 @@ public class UserController {
 
     @GetMapping("/all")
     @Secured("ROLE_USER")
-    public List<User> getAllUsers() {
+    public List<UserEntity> getAllUsers() {
         return userService.getAllUser();
     }
 

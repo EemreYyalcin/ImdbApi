@@ -1,6 +1,6 @@
 package com.imdb.api.config;
 
-import com.imdb.api.model.entity.User;
+import com.imdb.api.model.entity.UserEntity;
 import com.imdb.api.security.domain.enumeration.AuthRole;
 import com.imdb.api.service.jpa.UserService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ public class InitDataForH2 implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        userService.addUser(new User()
+        userService.addUser(new UserEntity()
                 .setName("Emre")
                 .setSurname("Yalcin")
                 .setAge(27)
@@ -27,7 +27,7 @@ public class InitDataForH2 implements CommandLineRunner {
                 .setPassword(encoder.encode("emre123"))
                 .setRoles(Arrays.asList(AuthRole.ROLE_ADMIN, AuthRole.ROLE_USER)));
 
-        userService.addUser(new User()
+        userService.addUser(new UserEntity()
                 .setName("EmreUser")
                 .setSurname("Yalcinuser")
                 .setAge(27)
@@ -35,7 +35,7 @@ public class InitDataForH2 implements CommandLineRunner {
                 .setPassword(encoder.encode("user123"))
                 .setRoles(Arrays.asList(AuthRole.ROLE_USER)));
 
-        userService.addUser(new User()
+        userService.addUser(new UserEntity()
                 .setName("EmreGuest")
                 .setSurname("Yalcinguest")
                 .setAge(27)

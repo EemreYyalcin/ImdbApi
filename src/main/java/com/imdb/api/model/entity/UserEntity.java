@@ -13,7 +13,7 @@ import java.util.Collection;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

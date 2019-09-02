@@ -1,7 +1,9 @@
 package com.imdb.api.model.entity;
 
 import com.imdb.api.security.domain.enumeration.AuthRole;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
@@ -12,8 +14,10 @@ import java.util.Collection;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Accessors(chain = true)
-public class UserEntity {
+public class UserEntity extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

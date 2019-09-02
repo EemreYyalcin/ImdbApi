@@ -15,7 +15,7 @@ public class ImdbClientService {
     @Value("${imdb.rest.apikey}")
     private String apikey;
 
-    @Cacheable(value = "imdb_keys", key = "#query", sync = true, cacheManager = RedisConfigConstraint.expireOneHour)
+    @Cacheable(value = "imdb_keys", key = "#query", sync = true, cacheManager = RedisConfigConstraint.expireConfigure)
     public <T extends ImdbBaseResponse> T fetchData(String query, Class<T> clazz) {
         return new RestTemplate().getForObject(url + apikey + query, clazz);
     }

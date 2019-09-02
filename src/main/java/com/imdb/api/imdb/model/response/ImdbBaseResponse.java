@@ -14,6 +14,4 @@ public class ImdbBaseResponse {
     @JsonProperty("Error")
     private String error;
 
-
-
 }

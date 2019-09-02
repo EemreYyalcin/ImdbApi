@@ -37,13 +37,6 @@ public class RedisConfig {
      * Redis-standalone connection factory
      */
 
-//    @Bean
-//    public JedisConnectionFactory jedisConnectionFactory() {
-//        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(host, port);
-//        redisStandaloneConfiguration.setPassword(password);
-//
-//        return new JedisConnectionFactory(redisStandaloneConfiguration);
-//    }
     @Bean
     public JedisConnectionFactory jedisConnectionFactory() {
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(host, port);

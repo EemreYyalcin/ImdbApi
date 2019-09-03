@@ -5,7 +5,7 @@ import com.imdb.api.imdb.repository.ImdbElementJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -13,11 +13,11 @@ public class ImdbElementService {
 
     private final ImdbElementJpaRepository imdbElementJpaRepository;
 
-    public List<ImdbElementEntity> getImdbElementByImdbId(String imdbId) {
+    public Optional<ImdbElementEntity> getImdbElementByImdbId(String imdbId) {
         return imdbElementJpaRepository.findByImdbIDEquals(imdbId);
     }
 
-    public List<ImdbElementEntity> getImdbElementByTitle(String title) {
+    public Optional<ImdbElementEntity> getImdbElementByTitle(String title) {
         return imdbElementJpaRepository.findByTitleEquals(title);
     }
 

@@ -46,12 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-//                .securityContext().securityContextRepository(customSecurityContextRepository)
-//                .and()
                 .authorizeRequests()
-//                .antMatchers("/oauth/token").permitAll()
-//                .antMatchers("/users/**").authenticated()
-                .antMatchers("/api-docs/**").permitAll()
                 .anyRequest().authenticated();
     }
 

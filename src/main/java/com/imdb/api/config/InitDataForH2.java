@@ -4,6 +4,7 @@ import com.imdb.api.model.entity.UserEntity;
 import com.imdb.api.security.domain.enumeration.AuthRole;
 import com.imdb.api.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import java.util.Arrays;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class InitDataForH2 implements CommandLineRunner {
 
     private final UserService userService;
@@ -44,5 +46,6 @@ public class InitDataForH2 implements CommandLineRunner {
                 .setRoles(Arrays.asList(AuthRole.ROLE_GUEST)));
 
 
+        log.info("Init Data Completed");
     }
 }

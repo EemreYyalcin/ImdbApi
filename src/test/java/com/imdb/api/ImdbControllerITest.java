@@ -70,7 +70,7 @@ public class ImdbControllerITest {
     @Test
     public void should_search_movies_with_search_key_and_page() throws Exception {
         log.info(mockMvc
-                .perform(get("/imdb/search/" + searchKey + "/2").header("Authorization", "Bearer " + accessToken))
+                .perform(get("/imdb/search/" + searchKey + "/1").header("Authorization", "Bearer " + accessToken))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString());
     }

@@ -33,7 +33,7 @@ public class ImdbController {
     }
 
     @GetMapping(value = {"/item/{itemId}"})
-    public ImdbElementDTO searchMovies(@PathVariable("itemId") String itemId) {
+    public ImdbElementDTO queryMovies(@PathVariable("itemId") String itemId) {
         return imdbClientService.fetchDataById(itemId);
     }
 

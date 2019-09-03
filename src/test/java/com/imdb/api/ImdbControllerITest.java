@@ -38,7 +38,7 @@ public class ImdbControllerITest {
     private String testUsername = "emreyalcin";
     private String testPassword = "emre123";
 
-    private final String searchKey = "titanic";
+    private String searchKey = "titanic";
 
     @Autowired
     private WebApplicationContext wac;
@@ -71,6 +71,14 @@ public class ImdbControllerITest {
     public void should_search_movies_with_search_key_and_page() throws Exception {
         log.info(mockMvc
                 .perform(get("/imdb/search/" + searchKey + "/1").header("Authorization", "Bearer " + accessToken))
+                .andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsString());
+    }
+
+    @Test
+    public void should_query_movies_with_imdb_id() throws Exception {
+        log.info(mockMvc
+                .perform(get("/imdb/item/tt0133093").header("Authorization", "Bearer " + accessToken))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString());
     }
